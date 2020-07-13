@@ -2,6 +2,6 @@
 ansible_user=vault
 become: True
 
-[haxor:children]
+[haxor]
 17.6.17.11
 17.6.17.12
