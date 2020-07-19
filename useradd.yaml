@@ -4,7 +4,7 @@
   tasks:
     - name: GIT updated --- now proceeding...
       block:
-        - name: useradd adding without sudo privileges.      
+        - name: Adding user "{{ username }}"  adding with group "{{ ugroup }}"  
           user:
            name: "{{ username }}"
            shell: /bin/bash
