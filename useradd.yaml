@@ -4,7 +4,7 @@
   become: True
   vars:
           #username: rupin     
-     upass: "{{ lookup('password', '/dev/null length=15 chars=ascii_letters') }}"
+     #upass: "{{ lookup('password', '/dev/null length=15 chars=ascii_letters') }}"
      #     ugroup: pubmatic_dev
      expiry: 30
   tasks:
