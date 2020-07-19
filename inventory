@@ -1,7 +1,2 @@
-[all:vars]
-ansible_user=vault
-become: True
-
-[haxor]
 17.6.17.11
 17.6.17.12
