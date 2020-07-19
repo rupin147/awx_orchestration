@@ -1,0 +1,34 @@
+# tasks file for useradd
+---
+- hosts: all
+  vars:
+     find_output1:
+              name: 30
+  vars_prompt:
+
+    - name: username
+      prompt: "What is your username?"
+      private: no
+
+    - name: password
+      prompt: "What is your password?"
+      private: no
+
+    - name: user_as_admin
+      prompt: "users as sudo type yes/no"
+      private: no
+      default: "yes"
+
+    - name: expire_set
+      prompt: "how many days the expire need to be set"
+      private: no
+      default: "30"
+
+  tasks:
+    - name: useradd adding without sudo privileges.
+      user:
+          name: "{{ username }}"
+          password: "{{ password | password_hash('sha512')}}"
+          state: present
+      when:  ( password != '') and (user_as_admin == "no")
+      register: find_output
