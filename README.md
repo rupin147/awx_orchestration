@@ -1,2 +1,2 @@
 # awx_orchestration
-awx_setip 
+awx_setup
